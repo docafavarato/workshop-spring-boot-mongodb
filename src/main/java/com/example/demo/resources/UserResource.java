@@ -28,5 +28,9 @@ public class UserResource {
 		return ResponseEntity.ok().body(listDto);
 	}
 	
-	
+	@GetMapping(value="/{id}")
+	public ResponseEntity<UserDTO> findById(@PathVariable String id) {
+		User user = service.findById(id);
+		return ResponseEntity.ok().body(new UserDTO(user));
+	}
 }
