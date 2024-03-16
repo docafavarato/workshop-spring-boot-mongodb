@@ -21,35 +21,35 @@ public class User implements Serializable {
 	public User() {
 	}
 
-	public User(String id, String name, String email) {
+	public User(String _id, String _name, String _email) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
+		id = _id;
+		name = _name;
+		email = _email;
 	}
 
 	public String getId() {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setId(String _id) {
+		id = _id;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String _name) {
+		name = _name;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String _email) {
+		email = _email;
 	}
 
 	@Override
