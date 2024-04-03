@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import com.example.demo.domain.Post;
 import com.example.demo.domain.User;
 import com.example.demo.dto.AuthorDTO;
+import com.example.demo.dto.CommentDTO;
 import com.example.demo.repository.PostRepository;
 import com.example.demo.repository.UserRepository;
 
@@ -38,6 +39,10 @@ public class Instatiation implements CommandLineRunner {
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		
 		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Let's go", "I'm going on a trip", new AuthorDTO(u1));
+		
+		CommentDTO c1 = new CommentDTO("Good trip, bro!", sdf.parse("21/03/2018"), new AuthorDTO(u2));
+		
+		post1.getComments().add(c1);
 		
 		postRepository.saveAll(Arrays.asList(post1));
 		
