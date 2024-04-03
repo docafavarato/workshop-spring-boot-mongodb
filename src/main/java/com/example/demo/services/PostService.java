@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,5 +25,9 @@ public class PostService {
 	public List<Post> findByTitleContaining(String text) {
 		List<Post> obj = repository.searchTitle(text);
 		return obj;
+	}
+	
+	public List<Post> fullSearch(String text, Date minDate, Date maxDate) {
+		return repository.fullSearch(text, minDate, new Date(maxDate.getTime() + 24 * 60 * 60 * 1000));
 	}
 }
